@@ -39,6 +39,13 @@ public class ProductController {
     public List<Product> findSelectedProducts(@PathVariable Double price) {
         return service.getSelectedProducts(price);
     }
+    
+    @GetMapping("/products2/{gprice}/{lprice}")
+    public List<Product> findSelectedProducts2(@PathVariable Double gprice, @PathVariable Double lprice) {
+    	System.out.println(gprice);
+    	System.out.println(lprice);
+        return service.getSelectedProducts2(gprice,lprice);
+    }
 
     @GetMapping("/productById/{id}")
     public Product findProductById(@PathVariable int id) {

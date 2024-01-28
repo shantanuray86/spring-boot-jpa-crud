@@ -15,4 +15,7 @@ public interface ProductRepository extends JpaRepository<Product,Integer> {
     
     @Query(value = "SELECT * FROM PRODUCT_TBL WHERE price > ?1", nativeQuery = true)
     List<Product> findselectedProducts(Double price);
+    
+    @Query(value = "SELECT * FROM PRODUCT_TBL WHERE price BETWEEN  ?1 AND ?2", nativeQuery = true)
+    List<Product> findselectedProducts2(Double gprice, Double lprice);
 }

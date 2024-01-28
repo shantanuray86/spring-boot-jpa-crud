@@ -32,6 +32,10 @@ public class ProductService {
     public List<Product> getSelectedProducts(Double price) {
         return repository.findselectedProducts(price);
     }
+    
+    public List<Product> getSelectedProducts2(Double gprice,Double lprice) {
+        return repository.findselectedProducts2(gprice,lprice);
+    }
 
     public Product getProductById(int id) {
         return repository.findById(id).orElse(null);
